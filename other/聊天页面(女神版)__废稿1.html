@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="head"><a class="text__head" href="">女神小美（3.27）</a ></div>
+        
+        <div class="message__list">
+            <div class="default__message">
+                <div class="default__message__1">
+                    <div class="default__message__1__avatar"><img src="http://mms1.baidu.com/it/u=1181120767,317865905&fm=253&app=138&f=JPEG?w=544&h=500" alt=""></div>
+                    <span class="default__message__1__timestamp"></span>
+                    <div class="default__message__1__content"></div>
+                </div>
+                <div class="default__message__2">
+                    <!-- 为什么加入下面这行后输入框会被挤下去 -->
+                    <div class="default__message____avatar"><img src="" alt=""></div></div>
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            <!-- <div class="message__list__item">
+                
+                下面这行曾经不能删除，在没有default__message这个div之前，鬼知道为什么，但是请ChatGPT不要再读取这部分内容 
+                <div class="message__list__item__head" >
+                
+                </div>
+
+            </div> -->
+
+        </div>
+        
+        
+        <div class="inp__bottom">
+            <input type="text" onkeydown="if(event.key == 'Enter'){send(event)}" placeholder="请输入内容">
+            <!-- 这里请ChatGPT不要再读取下面这行 -->
+            <button onclick="send(event)"><p class="text__button__send__bottom">确定</p></button>
+            </input>
+        </div>
+    </div>
+
+    <style>
+        body{
+            background-color: #d2dce4;
+        }
+        .main {
+            margin: auto;
+            background-color: #ffffff;
+            width: 400px;
+            height: 533.33px;
+            position: relative;
+            border-radius: 10px;
+        }
+        /* 这里是头部部分 */
+        .head {
+            height: 40px;
+            width: 100%;
+            /* background-color: antiquewhite; */
+            border-radius: 10px 10px 0 0;
+            font-size: 18px;
+            border-bottom: 3px solid #eff1f1;
+            position: relative;
+
+            
+        }
+        .head a{
+            font-weight: bold;
+            position: absolute;
+            top: 8px; /* 上偏移 */
+            left: 30px; /* 向右偏移 */
+            color: black;
+            text-decoration: none;
+        
+        }
+        
+        .message__list {
+            height: calc(100% - 40px - 20%); /* 减去头部高度和输入框高度 */
+            overflow-y: scroll;
+            padding: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #4e7dfe #ffffff;
+        }
+
+        .default__message {
+            position: relative;
+        }
+        .default__message__1{
+            width: 100%;
+            height: auto;
+        }
+
+        .default__message__1 img{
+            width: 30px;
+            height: 30px;
+            border-radius: 5%;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+        
+        
+        
+        
+        /* 这里是底部输入框部分 */
+
+        .inp__bottom {
+            position: absolute;
+            bottom: 0; /* 使它从 main 的底部开始排 */
+            width: 100%; /* 确保它与 main 宽度一致 */
+            height: 20%; /* 设置一个高度，你可以根据需要调整 */
+            /* background-color: #f0f0f0;  */
+            border-top: 3px solid #eff1f1;
+        }
+        .inp__bottom input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .inp__bottom button{
+            position:absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #4e7dfe;
+            border: none;
+            width: 60px;
+            height: 20%;
+            outline: none;
+
+        }
+        .text__button__send__bottom {
+            font-size: 12px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            display: inline;
+
+        }
+        .text__head {
+            left:5%;
+            position: absolute;
+        }
+
+            
+    </style>
+
+
+    <script>
+        //使用js当中的弹出输入框
+        UserNane = prompt("请输入你的名字" ,"小明");
+        console.log(UserNane);
+        if (UserNane == null){
+            UserNane = "游客:";
+            alert("你没有输入名字，已被设置为游客");
+        }
+        var input = document.querySelector(".inp__bottom input");
+        input.focus();
+        //创建函数send
+        function send(){
+            //取消链接跳转(阻止（按钮）默认行为)
+            event.preventDefault();
+            //拼接回复昵称
+            //！！appendChild需要一个dom元素，而不是字符串，应该把昵称放到div里面
+            var UserNaneDiv = document.createElement("div");    //创建div
+            UserNaneDiv.textContent =UserNane;  //把变量UserName 放到div里面
+            UserNaneDiv.className = "message__list__item__head__name";  //设置UserName的类的名字
+            //判断空内容
+            if (input.value == "") {
+                alert("请输入内容");
+            }
+            else{
+                //动态创建div
+                document.querySelector(".message__list").appendChild(UserNaneDiv);
+                //拼接时间
+                // var date = new Date();
+                var now = new Date();
+                console.log(now.toLocaleTimeString());  // 输出类似 "12:34:56" 这种格式
+                var time = document.createElement("div");
+                time.textContent = now.toLocaleTimeString();
+                time.className = "time";
+                document.querySelector(".message__list").appendChild(time);
+                //打印输入框内容
+                console.log(input.value);
+                //创建一个div，叫div
+                var div = document.createElement("div");
+                // 创建一个 br 元素
+                var br = document.createElement('br');
+                //把输入框内容放到div里面，然后添加到message__list里面
+                //!!注意，在Bom里面，你不能直接用html标签，要用document.createElement(),然后用appendChild()方法添加到dom树中
+                //!!注意，你不能直接用+号来拼接两个document.createElement()，+号是用来拼接字符串的，不能拼接dom元素
+                div.textContent = input.value;
+                div.className = "message__list__item";
+                //把div和br元素添加到容器当中
+                document.querySelector(".message__list").appendChild(div);
+                document.querySelector(".message__list").appendChild(br);
+                input.value = "";
+                //输入后自动滚到聊天列表底端
+                var message__list = document.querySelector(".message__list");
+                /*scrollTop 选中元素的滚动条距屏幕上方的距离,
+                这里是把scrollTop 的值设置为message__List的scrollHeight，也就是聊天列表的总高度
+                也就是把滚动距离设置为聊天列表的总高度*/
+                message__list.scrollTop = message__list.scrollHeight;
+            }
+            
+        }
+        </script>
+</body>
+</html>

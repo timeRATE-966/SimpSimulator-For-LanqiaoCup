@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+</head>
+<body>
+    <div class="main">
+        <!-- 头部 -->
+        <div class="head">
+            <h>小美（3.27）</h>
+        </div>
+
+        <!-- 消息列表 -->
+        <div class="message__list"></div>
+
+        <!-- 输入框 -->
+        <div class="inp__bottom">
+            <input type="text" onkeydown="if(event.key === 'Enter') send(event)" placeholder="请输入内容">
+            <button onclick="send(event)">确定</button>
+        </div>
+    </div>
+
+    <style>
+        body {
+            background-color: #d2dce4;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            margin: auto;
+            background-color: #ffffff;
+            width: 400px;
+            height: 600px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .head {
+            height: 50px;
+            width: 100%;
+            border-bottom: 3px solid #eff1f1;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .message__list {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            /* 强制自动换行 */
+            word-break: break-all; 
+        }
+
+        .message__list__item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .message__list__item .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .message__list__item .content {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+            position: relative;
+        }
+
+        .message__list__item .content .timestamp {
+            font-size: 10px;
+            color: #888;
+            position: absolute;
+            bottom: -15px;
+            right: 10px;
+        }
+        .message__list__item{
+            /* 整体强制从右开始排布 */
+            justify-content: flex-end;
+            
+
+        }
+        .message__list__item .content
+
+        /* 底部输入框 */
+        .inp__bottom {
+            height: 60px;
+            border-top: 3px solid #eff1f1;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            background-color: #ffffff;
+        }
+
+        .inp__bottom input {
+            flex: 1;
+            height: 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 0 10px;
+            outline: none;
+        }
+
+        .inp__bottom button {
+            margin-left: 10px;
+            padding: 0 15px;
+            height: 40px;
+            background-color: #4e7dfe;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="node_modules/"></script>
+    <script>
+        
+        // 获取用户昵称
+        let UserNane = prompt("请输入你的名字", "小明") || "游客";
+
+        // 获取输入框和消息列表
+        const input = document.querySelector(".inp__bottom input");
+        const messageList = document.querySelector(".message__list");
+
+        // 创建发送消息函数
+        function send(event) {
+            event.preventDefault();
+
+            // 判断输入框内容是否为空
+            const content = input.value.trim();
+            if (!content) {
+                alert("请输入内容");
+                return;
+            }
+
+            // 创建消息项--右边
+            const messageItem = document.createElement("div");
+            messageItem.className = "message__list__item";
+
+            // 创建头像
+            const avatar = document.createElement("img");
+            avatar.className = "avatar";
+            avatar.src = "https://via.placeholder.com/40";  //使用在线占位符网站
+            avatar.alt = "Avatar";
+
+            // 创建内容容器
+            const contentDiv = document.createElement("div");
+            contentDiv.className = "content";
+            contentDiv.textContent = content;
+
+            // 创建时间戳
+            const timestamp = document.createElement("div");
+            timestamp.className = "timestamp";
+            timestamp.textContent = new Date().toLocaleTimeString();
+            contentDiv.appendChild(timestamp);
+
+            // 组装消息项
+            messageItem.appendChild(avatar);
+            messageItem.appendChild(contentDiv);
+
+            // 添加到消息列表
+            messageList.appendChild(messageItem);
+
+            // 清空输入框并滚动到底部
+            input.value = "";
+            messageList.scrollTop = messageList.scrollHeight;
+
+            
+
+
+            //创建一个socket对象
+            var socket = io();
+            //发送
+            socket.on('message',function(){
+                
+            })
+
+            
+        }
+
+
+    </script>
+</body>
+</html>
