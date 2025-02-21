@@ -1,0 +1,70 @@
+<!--pages/directHiringPage/directHiringPage.wxml-->
+<!-- 背景头图 -->
+<view class="headerBackground" style="position: relative;"><image src="/image/directHiringPageHead.png" mode=""/>
+  <!-- 导航栏 -->
+  <!-- 适配刘海屏 1.{{}},从data中获取该变量值并填入..2. 使用top将自定义导航栏下调-->
+    <view class="custom-navbar" style="top: {{statusBarHeight}}px;position: absolute;">
+      <view class="backButton" bindtap="goBack"><image src="/icons/BackButton.png" mode=""/>
+</view>
+
+  </view>
+  <!-- position -->
+  <swiper  class="hiringPosition_swiper" style="position: absolute;top: {{statusBarHeight + 44}}px;z-index: 1;">
+    <swiper-item class="hiringPosition_swiper_item" >
+    <!-- 传统方法渲染 -->
+      <view class="hiringPosition"><image src="/icons/position_后龙镇.png" mode=""/></view>
+      <view class="hiringPosition"><image src="/icons/position_界山镇.png" mode=""/></view>
+      <view class="hiringPosition"><image src="/icons/position_南浦镇.png" mode=""/></view>
+      <view class="hiringPosition"><image src="/icons/position_山腰街道.png" mode=""/></view>
+      
+    </swiper-item>
+    <swiper-item class="hiringPosition_swiper_item">
+      <view class="hiringPosition"><image src="/icons/position_涂岭镇.png" mode=""/></view>
+      <view class="hiringPosition"><image src="/icons/position_尾峰镇.png" mode=""/></view>
+      <view class="hiringPosition"><image src="/icons/position_前黄镇.png" mode=""/></view>
+      
+    </swiper-item>
+  </swiper>
+  <view class="sidebar">
+    
+  </view>
+</view>
+<!-- 主功能区 -->
+<view class="box" >
+  <view class="sidebar">
+  <!-- wxfor渲染 -->
+    <scroll-view scroll-y="true" >
+    <view class="countrys_div">
+      <view class="countryname_all ">全部</view>
+      <view  wx:for="{{countrys}}"><view class="countryname">{{item.name}}</view></view>
+    </view>
+    </scroll-view>
+  </view>
+  <view class="filterSortView">
+    <view class="sortArr">年龄<image src="/icons/sortAgeArr.png" mode=""/></view>
+    <view class="sortButton">筛选<image src="/icons/sortIron.png" mode=""/></view>
+  </view>
+  <view class="main">
+    <scroll-view scroll-x="true"> 
+      <view class="recruitmentPerson_view" wx:for="{{recruitmentPerson}}">
+
+        <view class="recruitmentPerson_head"><image src="/icons/招聘人员头像_{{item.id}}.png" mode=""/></view>
+
+        <view class="basicInfoView"> 
+          <view class="recruitmentPerson_name">{{item.name}}</view> 
+          <view class="recruitmentPerson_genderImageView"><image src="{{item.genderIcon}}" mode=""/></view>
+          <view class="recruitmentPerson_age">{{item.age}}</view>
+        </view>
+
+        <view class="salaryInfo">
+          <view>{{item.job}}</view>
+          <view>{{item.salary}}</view>
+        </view>
+
+        <view class="array_right"><image src="/icons/右箭头.png" mode=""/></view>
+
+        <view class="recruitmentPerson_rate"><image src="{{item.rateIcon}}" mode=""/></view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

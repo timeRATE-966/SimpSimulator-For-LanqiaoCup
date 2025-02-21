@@ -1,0 +1,628 @@
+/* pages/page1/page1.wxss */
+/* 导航栏 */
+.custom-navbar {
+  /*display: flex;*/  
+  align-items: center; /* 垂直居中对齐 */
+  width: 100%; 
+  background-color: #ff8f3e; /* 设置背景颜色 */
+  position: relative;
+}
+
+
+.position {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* 防止收缩 */
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.position_icon {
+  width: 15px;
+  height: 17.5px;
+}
+
+.position_text {
+  white-space: nowrap;
+  font-size: 14px;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 19.6px;
+  letter-spacing: -0.30000001192092896px;
+  text-align: center;
+  color: white;
+  margin: 0 5px; /* 增加左右边距 */
+}
+
+.arr_right {
+  width: 13.1px;
+  height: 14px;
+}
+
+.tittle {
+  display: flex; 
+  justify-content: center;  
+  align-items: center; 
+  flex: 1; /* 占据剩余空间 */
+  color: white;
+  text-align: center;
+  position: relative;
+  top: -6px;
+}
+
+.text {
+  font-size: 17px; /* 设置文字大小 */
+  font-family: "PingFang SC", "Helvetica", "Arial", sans-serif;
+}
+
+
+.tittle {
+  display: flex; 
+  justify-content: center;  
+  align-items: center; 
+  width: 100%; 
+  height: 50px; 
+  color: white;
+
+}
+
+.text {
+  font-size: 17px; /* 设置文字大小 */
+  font-family: "PingFang SC", "Helvetica", "Arial", sans-serif;
+}
+
+/* 功能区 */
+.fucntion-background{
+  background: linear-gradient(180deg ,#ff8f3e ,#FF8126CF ,#FF812600);
+  width: 100%;
+  height: 312rpx;
+}
+
+.function{
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 312rpx;
+  width: auto;
+  display: flex;
+  /* margin-top: 32rpx; */
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  border-radius: 24rpx;
+  flex-wrap: wrap;  /*自动换行*/
+  justify-content: space-around;  /*水平均匀分布*/
+  gap: 16rpx; /*增加元素间距*/
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.06);
+  
+
+}
+
+.fun_icon{
+  /* background-color: palevioletred; */
+  width: 116rpx;
+  height: 116rpx;
+  margin-left: 0rpx;
+}
+.fun_icon image{
+  width: 116rpx;
+  height: 116rpx;
+}
+
+.fun_icon_pageIndicator image{
+  width: 78rpx;
+  height: 12rpx;
+}
+
+.fun_icon_pageIndicator{
+  display: flex;
+  justify-content: center;  /*居中对齐*/
+  width: 100%;
+  align-items: center;
+  
+}
+
+.swiperView{
+  display: flex;
+  margin-top: 32prx;
+
+}
+
+.swiperView image{
+  width: 686rpx;
+  height: 312rpx;
+  justify-items: center;
+  margin-left: 32rpx;
+  margin-top: 32rpx;
+}
+
+
+.content{
+  /* width: 750rpx; */
+  height: 610rpx;
+  /* background-color: peru; */
+
+
+}
+
+.navBar{
+  /* width: 375px; */
+  height: 96rpx;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+
+  justify-content: space-around;  /*水平均匀分布*/
+  /* background-color: peru; */
+  align-items: center;  
+
+}
+
+.selectedTab{
+  width: 64rpx;
+  height: 32rpx;
+  top: 32rpx;
+  left: 100rpx;
+  gap: 0px;
+  opacity: 0px;
+
+}
+
+.selectedTab text{
+font-family: PingFang SC;
+font-size: 32rpx;
+font-weight: 600;
+line-height: 32rpx;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+
+.navTitle{
+height: 14px;
+top: 17px;
+left: 133px;
+gap: 0px;
+opacity: 0px;
+
+}
+
+.navTitle text{
+  font-family: PingFang SC;
+font-size: 14px;
+font-weight: 500;
+line-height: 14px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+
+.navHint{
+
+  top: 54px;
+  left: 123px;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.navHint text{
+  font-family: PingFang SC;
+font-size: 12px;
+font-weight: 500;
+line-height: 12px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: rgba(255, 129, 38, 1);
+
+}
+
+.content1{
+  width: 375px;
+  height: 255px;
+  top: 504px;
+  gap: 0px;
+  opacity: 0px;
+  background-color: peru;
+
+}
+
+
+
+.logo1{
+width: 70px;
+height: 70px;
+gap: 0px;
+opacity: 0px;
+margin-left: 32rpx;
+margin-top: 32rpx;
+
+}
+
+.merchantNane1{
+  width: 200px;
+height: 18px;
+left: 102px;
+gap: 0px;
+opacity: 0px;
+
+}
+
+/* 主功能入口 */
+.mainFunctionEntry{
+  display: flex;
+  margin-left: 32rpx;
+  margin-top: 32rpx;
+  gap: 32rpx;
+}
+
+.directHireModule image{
+  width: 165px;
+height: 100px;
+top: 276px;
+left: 16px;
+gap: 0px;
+border-radius: 12px 0px 0px 0px;
+opacity: 0px;
+
+}
+
+.orderTakingModule image{
+  width: 165px;
+height: 100px;
+top: 276px;
+left: 194px;
+gap: 0px;
+border-radius: 12px 0px 0px 0px;
+opacity: 0px;
+
+}
+/* 工作类型 */
+.jobListView{
+  position: relative;
+}
+.jobTypeBar{
+  width: 375px;
+height: 48px;
+gap: 0px;
+opacity: 0px;
+background: rgba(255, 255, 255, 1);
+display: flex;
+margin: auto;
+gap: 48px;
+margin-left: 50px;
+}
+
+.jobType{
+display: flex;
+
+}
+
+.Highlight{
+  position: relative;
+  width: 32px;
+height: 16px;
+top: 16px;
+/* left: 50px; */
+gap: 0px;
+opacity: 0px;
+font-family: PingFang SC;
+font-size: 16px;
+font-weight: 600;
+line-height: 16px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+display: flex;
+position: relative;
+}
+
+.activeTabIndicator{
+  width: 24px;
+height: 4px;
+top: 27px;
+left: 4px;
+gap: 0px;
+border-radius: 4px 0px 0px 0px;
+opacity: 0px;
+background: rgba(255, 129, 38, 1);
+position: absolute;
+}
+.Moving{
+  width: 28px;
+height: 14px;
+top: 17px;
+/* left: 133px; */
+gap: 0px;
+opacity: 0px;
+font-family: PingFang SC;
+font-size: 14px;
+font-weight: 500;
+line-height: 14px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+position: relative;
+
+}
+
+.Plumbing{
+  width: 56px;
+height: 14px;
+top: 17px;
+/* left: 212px; */
+gap: 0px;
+opacity: 0px;
+font-family: PingFang SC;
+font-size: 14px;
+font-weight: 500;
+line-height: 14px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+position: relative;
+}
+
+.Electrician {
+  width: 28px;
+  height: 14px;
+  position: relative;
+  top: 17px;
+  /* left: 319px; */
+  font-family: PingFang SC;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  text-align: center;
+  color: #000; 
+  opacity: 1;  
+
+}
+
+.HintText {
+  width: 129px;
+height: 12px;
+
+margin-left: 123px;
+gap: 0px;
+opacity: 0px;
+font-family: PingFang SC;
+font-size: 12px;
+font-weight: 500;
+line-height: 12px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: rgba(255, 129, 38, 1);
+
+
+}
+/* 工作列表 */
+.jobInfoContainer{
+  position: relative;
+}
+.merchantContainer{
+  display: flex;
+  position: relative;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+.merchantIcon image{
+width: 70px;
+height: 70px;
+left: 16px;
+margin-top: 16px;
+gap: 0px;
+border-radius: 6px 0px 0px 0px;
+opacity: 0px;
+display: flex;
+position: relative;
+}
+.merchantName{
+  width: 200px;
+height: 18px;
+margin-left: 32px;  /*top只对定位属性生效，如果没设置position，，即position默认为sticky，这不生效*/
+margin-top: 16px;
+gap: 0px;
+opacity: 0px;
+font-family: PingFang SC;
+font-size: 18px;
+font-weight: 500;
+line-height: 18px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+font-weight: 500;
+}
+.ratingStarsContainer{
+  width: 70px;
+height: 14px;
+left: 102px;
+top: 42px;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+/* background-color: black; */
+margin: none;
+}
+.ratingStarsContainer image{
+  width: 70px;
+  height: 14px;
+  justify-content: center;
+  align-items: center;
+}
+.ratingScore{
+  position: absolute;
+  top: 44px;
+  left: 176px;
+  font-family: PingFang SC;
+font-size: 14px;
+font-weight: 400;
+line-height: 14px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color:  rgba(255, 129, 38, 1);
+
+}
+.merchantType{
+  position: absolute;
+  width: 56px;
+height: 14px;
+top: 70px;
+left: 106px;
+gap: 0px;
+opacity: 0px;
+font-family: PingFang SC;
+font-size: 14px;
+font-weight: 400;
+line-height: 14px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: rgba(130, 130, 130, 1);
+
+
+}
+.merchantPosition{
+  width: 56px;
+height: 14px;
+top: 70px;
+left: 261px;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+font-family: PingFang SC;
+font-size: 14px;
+font-weight: 400;
+line-height: 14px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: rgba(130, 130, 130, 1);
+
+}
+.merchgaDistance{
+  position: absolute;
+  width: 34px;
+height: 14px;
+top: 70px;
+left: 325px;
+gap: 0px;
+opacity: 0px;
+font-family: PingFang SC;
+font-size: 14px;
+font-weight: 400;
+line-height: 14px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: rgba(130, 130, 130, 1);
+}
+.divider{
+  width: 343px;
+height: 0px;
+
+left: 16px;
+gap: 0px;
+border: 1px 0px 0px 0px;
+opacity: 0px;
+
+border: 1px solid rgba(242, 242, 242, 1);
+position: relative;
+}
+
+/* 价格列表 */
+.merchantRate{
+  display: flex;
+  margin: 16px 0px 16px 16px; /*!!上右下左*/
+  
+}
+.merchantRate_value{
+  position: relative;
+  /* width: 70px; */
+height: 16px;
+left: 1px;
+gap: 0px;
+opacity: 0px;
+/* background-color: black; */
+font-family: PingFang SC;
+font-size: 16px;
+font-weight: 600;
+line-height: 16px;
+text-align: right;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: rgba(255, 129, 38, 1);
+margin-right: 2px;
+}
+
+.hourUnit{
+  position: relative;
+  /* background-color: black; */
+  /* width: 32px; */
+  height: 16px;
+  font-family: PingFang SC;
+font-size: 12px;
+font-weight: 600;
+line-height: 16px;
+text-align: right;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: rgba(255, 129, 38, 1);
+margin-top: 2px;
+}
+.merchantPrice_content{
+  position: absolute;
+  /* width: 106px; */
+height: 16px;
+left: 142px;
+gap: 0px;
+opacity: 0px;
+font-family: PingFang SC;
+font-size: 16px;
+font-weight: 400;
+line-height: 16px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: rgba(18, 27, 54, 0.9);
+
+}
+
+/* 展开按钮 */
+.showMoreProjects{
+  /* width: 121px; */
+height: 14px;
+top: 214px;
+left: 123px;
+gap: 0px;
+opacity: 0px;
+position: absolute;
+font-family: PingFang SC;
+font-size: 14px;
+font-weight: 400;
+line-height: 14px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+display: flex;
+/* background-color: blue; */
+}
+.showMoreProjects_text{
+  margin-right: 8px;
+}
+.showMoreProjects image{
+  width: 14px;
+  height: 14px;
+  top: 228px;
+  left: 252px;
+  gap: 0px;
+  opacity: 0px;
+
+
+}

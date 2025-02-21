@@ -1,0 +1,29 @@
+/* pages/page2/page2.wxss */
+.d1{
+  color: red;
+}
+.v1{
+  /* 可选用rgb or 十六进制，但是app.json里面文档规定只能用十六进制 */
+  color: antiquewhite;
+  font-size: 24px;
+  width: 686rpx;
+  height: 212rpx;
+  /* width: 10px; */
+  background: linear-gradient(180deg ,rgba(65, 105, 225,0.80)50% ,rgba(255 ,255 ,255)30% ,rgb(0,0,0));
+  
+  /* 渐变角度 ，颜色1 占比 ，颜色2 占比 */
+}
+.v2{
+  background: linear-gradient(rgba(255, 129, 38,1), 
+                              rgba(255, 129, 38, 0.81), 
+                              rgba(255, 129,38,0));
+  height: 350rpx;
+
+}
+.v3{
+  margin-left: 30rpx;
+}
+.fun_icon{
+  height: 50px;
+  width: 50PX;
+}
